@@ -1,0 +1,4 @@
+# pymxs  ## 3DS Max Python API
+
+open3d
+numpy

@@ -1,0 +1,285 @@
+{
+    "application_properties": {
+        "antiAlias": true,
+        "fillMode": "FILL_WINDOW",
+        "resolutionMode": "AUTO",
+        "height": 720,
+        "width": 1280,
+        "use3dPhysics": false,
+        "preferWebGl2": true,
+        "preserveDrawingBuffer": false,
+        "scripts": [
+            203182798,
+            203182793,
+            203182795
+        ],
+        "transparentCanvas": true,
+        "useDevicePixelRatio": false,
+        "useLegacyScripts": false,
+        "vr": false,
+        "loadingScreenScript": null,
+        "batchGroups": [],
+        "layers": {
+            "0": {
+                "name": "World",
+                "opaqueSortMode": 2,
+                "transparentSortMode": 3
+            },
+            "1": {
+                "name": "Depth",
+                "opaqueSortMode": 2,
+                "transparentSortMode": 3
+            },
+            "2": {
+                "name": "Skybox",
+                "opaqueSortMode": 0,
+                "transparentSortMode": 3
+            },
+            "3": {
+                "name": "Immediate",
+                "opaqueSortMode": 0,
+                "transparentSortMode": 3
+            },
+            "4": {
+                "name": "UI",
+                "opaqueSortMode": 1,
+                "transparentSortMode": 1
+            }
+        },
+        "layerOrder": [
+            {
+                "layer": 0,
+                "transparent": false,
+                "enabled": true
+            },
+            {
+                "layer": 1,
+                "transparent": false,
+                "enabled": true
+            },
+            {
+                "layer": 2,
+                "transparent": false,
+                "enabled": true
+            },
+            {
+                "layer": 0,
+                "transparent": true,
+                "enabled": true
+            },
+            {
+                "layer": 3,
+                "transparent": false,
+                "enabled": true
+            },
+            {
+                "layer": 3,
+                "transparent": true,
+                "enabled": true
+            },
+            {
+                "layer": 4,
+                "transparent": true,
+                "enabled": true
+            }
+        ],
+        "useKeyboard": true,
+        "useMouse": true,
+        "useTouch": true,
+        "useGamepads": false,
+        "i18nAssets": [],
+        "externalScripts": [],
+        "useLegacyAmmoPhysics": true,
+        "powerPreference": "default",
+        "maxAssetRetries": 0,
+        "deviceTypes": [
+            "webgl2",
+            "webgl1"
+        ],
+        "enableSharedArrayBuffer": false,
+        "libraries": []
+    },
+    "scenes": [
+        {
+            "name": "Main",
+            "url": "2108948.json"
+        }
+    ],
+    "assets": {
+        "203182793": {
+            "name": "touch-input.js",
+            "type": "script",
+            "file": {
+                "filename": "touch-input.js",
+                "size": 5069,
+                "hash": "dd352842782199b1bafbbb962802f6ab",
+                "url": "files/touch-input.js"
+            },
+            "data": {
+                "order": 100,
+                "scripts": {
+                    "touchInput": {
+                        "attributesOrder": [
+                            "orbitSensitivity",
+                            "distanceSensitivity"
+                        ],
+                        "attributes": {
+                            "orbitSensitivity": {
+                                "type": "number",
+                                "default": 0.4,
+                                "title": "Orbit Sensitivity",
+                                "description": "How fast the camera moves around the orbit. Higher is faster"
+                            },
+                            "distanceSensitivity": {
+                                "type": "number",
+                                "default": 0.2,
+                                "title": "Distance Sensitivity",
+                                "description": "How fast the camera moves in and out. Higher is faster"
+                            }
+                        }
+                    }
+                },
+                "loading": false,
+                "loadingType": 0
+            },
+            "preload": true,
+            "tags": [],
+            "i18n": {},
+            "id": "203182793"
+        },
+        "203182795": {
+            "name": "mouse-input.js",
+            "type": "script",
+            "file": {
+                "filename": "mouse-input.js",
+                "size": 4175,
+                "hash": "f64305f0f63b3cecbf1278656130dd3c",
+                "url": "files/mouse-input.js"
+            },
+            "data": {
+                "order": 100,
+                "scripts": {
+                    "mouseInput": {
+                        "attributesOrder": [
+                            "orbitSensitivity",
+                            "distanceSensitivity"
+                        ],
+                        "attributes": {
+                            "orbitSensitivity": {
+                                "type": "number",
+                                "default": 0.3,
+                                "title": "Orbit Sensitivity",
+                                "description": "How fast the camera moves around the orbit. Higher is faster"
+                            },
+                            "distanceSensitivity": {
+                                "type": "number",
+                                "default": 0.15,
+                                "title": "Distance Sensitivity",
+                                "description": "How fast the camera moves in and out. Higher is faster"
+                            }
+                        }
+                    }
+                },
+                "loading": false,
+                "loadingType": 0
+            },
+            "preload": true,
+            "tags": [],
+            "i18n": {},
+            "id": "203182795"
+        },
+        "203182798": {
+            "name": "orbit-camera.js",
+            "type": "script",
+            "file": {
+                "filename": "orbit-camera.js",
+                "size": 13739,
+                "hash": "ec80d44f39b8b95ebb18be5c935bb6f2",
+                "url": "files/orbit-camera.js"
+            },
+            "data": {
+                "scripts": {
+                    "orbitCamera": {
+                        "attributesOrder": [
+                            "autoRender",
+                            "distanceMax",
+                            "distanceMin",
+                            "pitchAngleMax",
+                            "pitchAngleMin",
+                            "inertiaFactor",
+                            "focusEntity",
+                            "frameOnStart"
+                        ],
+                        "attributes": {
+                            "distanceMax": {
+                                "type": "number",
+                                "default": 0,
+                                "title": "Distance Max",
+                                "description": "Setting this at 0 will give an infinite distance limit"
+                            },
+                            "distanceMin": {
+                                "type": "number",
+                                "default": 0,
+                                "title": "Distance Min"
+                            },
+                            "pitchAngleMax": {
+                                "type": "number",
+                                "default": 90,
+                                "title": "Pitch Angle Max (degrees)"
+                            },
+                            "pitchAngleMin": {
+                                "type": "number",
+                                "default": -90,
+                                "title": "Pitch Angle Min (degrees)"
+                            },
+                            "inertiaFactor": {
+                                "type": "number",
+                                "default": 0,
+                                "title": "Inertia Factor",
+                                "description": "Higher value means that the camera will continue moving after the user has stopped dragging. 0 is fully responsive."
+                            },
+                            "focusEntity": {
+                                "type": "entity",
+                                "title": "Focus Entity",
+                                "description": "Entity for the camera to focus on. If blank, then the camera will use the whole scene"
+                            },
+                            "frameOnStart": {
+                                "type": "boolean",
+                                "default": true,
+                                "title": "Frame on Start",
+                                "description": "Frames the entity or scene at the start of the application.\""
+                            },
+                            "autoRender": {
+                                "type": "boolean",
+                                "default": true,
+                                "title": "Auto Render",
+                                "description": "Disable to only render when camera is moving (saves power when the camera is still)"
+                            }
+                        }
+                    }
+                },
+                "loading": false,
+                "loadingType": 0
+            },
+            "preload": true,
+            "tags": [],
+            "i18n": {},
+            "id": "203182798"
+        },
+        "203182826": {
+            "name": "splatmodel.ply",
+            "type": "gsplat",
+            "file": {
+                "filename": "splatmodel.ply",
+                "size": 675758,
+                "hash": "34147991e6782c78c36daccffd96ccdc",
+                "url": "https://raw.githubusercontent.com/LaserBorg/SplattingTools/refs/heads/main/_assets/iceberg.compressed.ply"
+            },
+            "data": null,
+            "preload": true,
+            "tags": [],
+            "i18n": {},
+            "id": "203182826"
+        }
+    }
+}

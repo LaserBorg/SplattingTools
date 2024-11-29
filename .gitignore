@@ -1,0 +1,12 @@
+__pycache__
+_other/
+
+# media
+_assets/*
+!_assets/iceberg.compressed.ply
+
+*/output/*
+images/
+*.psht
+
+3dsMax/scene

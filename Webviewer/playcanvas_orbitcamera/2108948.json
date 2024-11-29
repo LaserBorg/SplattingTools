@@ -1,0 +1,226 @@
+{
+    "name": "Main",
+    "created": "2016-11-17T15:36:37.481Z",
+    "settings": {
+        "physics": {
+            "gravity": [
+                0,
+                -9.8,
+                0
+            ]
+        },
+        "render": {
+            "fog_end": 1000,
+            "tonemapping": 3,
+            "skybox": null,
+            "fog_density": 0.01,
+            "gamma_correction": 1,
+            "exposure": 0.9,
+            "fog_start": 1,
+            "global_ambient": [
+                0.20392156862745098,
+                0.28627450980392155,
+                0.3686274509803922
+            ],
+            "skyboxIntensity": 1,
+            "fog_color": [
+                0,
+                0,
+                0
+            ],
+            "lightmapMode": 1,
+            "fog": "none",
+            "lightmapMaxResolution": 2048,
+            "skyboxMip": 0,
+            "lightmapSizeMultiplier": 16,
+            "skyboxRotation": [
+                0,
+                0,
+                0
+            ],
+            "lightmapFilterEnabled": false,
+            "lightmapFilterRange": 10,
+            "lightmapFilterSmoothness": 0.2,
+            "ambientBake": false,
+            "ambientBakeNumSamples": 1,
+            "ambientBakeSpherePart": 0.4,
+            "ambientBakeOcclusionBrightness": 0,
+            "ambientBakeOcclusionContrast": 0,
+            "clusteredLightingEnabled": true,
+            "lightingCells": [
+                10,
+                3,
+                10
+            ],
+            "lightingMaxLightsPerCell": 255,
+            "lightingCookieAtlasResolution": 2048,
+            "lightingShadowAtlasResolution": 2048,
+            "lightingShadowType": 0,
+            "lightingCookiesEnabled": false,
+            "lightingAreaLightsEnabled": false,
+            "lightingShadowsEnabled": true,
+            "skyType": "infinite",
+            "skyMeshPosition": [
+                0,
+                0,
+                0
+            ],
+            "skyMeshRotation": [
+                0,
+                0,
+                0
+            ],
+            "skyMeshScale": [
+                100,
+                100,
+                100
+            ],
+            "skyCenter": [
+                0,
+                0.1,
+                0
+            ]
+        }
+    },
+    "entities": {
+        "a0ac08e4-acdb-11e6-8f36-22000ac481df": {
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "name": "Root",
+            "parent": null,
+            "resource_id": "a0ac08e4-acdb-11e6-8f36-22000ac481df",
+            "components": {},
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "enabled": true,
+            "children": [
+                "a0ac0aec-acdb-11e6-8f36-22000ac481df",
+                "2857d7e8-6efe-45fb-b9ae-e2acd3c95d70"
+            ],
+            "tags": []
+        },
+        "a0ac0aec-acdb-11e6-8f36-22000ac481df": {
+            "position": [
+                0,
+                2.1541459560394287,
+                3.634289026260376
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "name": "Camera",
+            "parent": "a0ac08e4-acdb-11e6-8f36-22000ac481df",
+            "resource_id": "a0ac0aec-acdb-11e6-8f36-22000ac481df",
+            "components": {
+                "camera": {
+                    "projection": 0,
+                    "farClip": 100,
+                    "clearColorBuffer": true,
+                    "priority": 0,
+                    "fov": 45,
+                    "clearDepthBuffer": true,
+                    "frustumCulling": true,
+                    "clearColor": [
+                        0.47058823529411764,
+                        0.47058823529411764,
+                        0.47058823529411764,
+                        0
+                    ],
+                    "enabled": true,
+                    "orthoHeight": 4,
+                    "nearClip": 0.1,
+                    "rect": [
+                        0,
+                        0,
+                        1,
+                        1
+                    ],
+                    "layers": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ]
+                },
+                "script": {
+                    "enabled": true,
+                    "order": [
+                        "orbitCamera",
+                        "mouseInput",
+                        "touchInput"
+                    ],
+                    "scripts": {
+                        "orbitCamera": {
+                            "enabled": true,
+                            "attributes": {
+                                "distanceMax": 10,
+                                "distanceMin": 2,
+                                "pitchAngleMax": 60,
+                                "pitchAngleMin": 0,
+                                "inertiaFactor": 0.2,
+                                "focusEntity": null,
+                                "frameOnStart": true,
+                                "autoRender": true
+                            }
+                        },
+                        "mouseInput": {
+                            "enabled": true,
+                            "attributes": {
+                                "orbitSensitivity": 0.3,
+                                "distanceSensitivity": 0.2
+                            }
+                        },
+                        "touchInput": {
+                            "enabled": true,
+                            "attributes": {
+                                "orbitSensitivity": 0.4,
+                                "distanceSensitivity": 0.2
+                            }
+                        }
+                    }
+                }
+            },
+            "rotation": [-30, 0, 0],
+            "enabled": true,
+            "children": [],
+            "tags": []
+        },
+        "2857d7e8-6efe-45fb-b9ae-e2acd3c95d70": {
+            "name": "splatmodel",
+            "tags": [],
+            "enabled": true,
+            "resource_id": "2857d7e8-6efe-45fb-b9ae-e2acd3c95d70",
+            "parent": "a0ac08e4-acdb-11e6-8f36-22000ac481df",
+            "children": [],
+            "position": [0, 0, 0],
+            "rotation": [0, 0, -180],
+            "scale": [1, 1, 1],
+            "components": {
+                "gsplat": {
+                    "enabled": true,
+                    "asset": 203182826,
+                    "layers": [
+                        0
+                    ]
+                }
+            }
+        }
+    },
+    "checkpoint_id": "d246daf8-30cf-43dc-ad8a-3d12b064cd4a",
+    "branch_id": "488087c5-abb4-430d-b9dc-63418e2cda4b",
+    "id": 2108948
+}
