@@ -2,7 +2,7 @@ import csv
 import math
 import os
 
-import pymxs
+import pymxs  # type: ignore
 
 def quaternion_to_euler(x, y, z, w):
     # Convert quaternion to Euler angles (heading, pitch, roll)

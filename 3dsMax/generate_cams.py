@@ -1,7 +1,7 @@
 import numpy as np
 import math
 
-import pymxs
+import pymxs  # type: ignore
 
 # Function to get bounding boxes and centers of scene objects, excluding a specific object by name
 def get_scene_objects(exclude_name=None):

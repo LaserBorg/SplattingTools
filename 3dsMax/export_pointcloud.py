@@ -2,9 +2,9 @@ import numpy as np
 import os
 import shutil
 import open3d as o3d
-import open3d.core as o3c
+import open3d.core as o3c  # type: ignore
 
-import pymxs
+import pymxs  # type: ignore
 
 def export_fbx(fbx_path, exclude=[]):
     rt = pymxs.runtime
