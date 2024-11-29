@@ -19,6 +19,11 @@ def quaternion_to_euler(x, y, z, w):
     t4 = +1.0 - 2.0 * (y * y + z * z)
     heading = math.atan2(t3, t4)
 
+    # Convert radians to degrees
+    heading = math.degrees(heading)
+    pitch = math.degrees(pitch)
+    roll = math.degrees(roll)
+    
     return heading, pitch, roll
 
 def get_camera_transform_at_frame(camname, frame):
@@ -35,6 +40,7 @@ def get_camera_transform_at_frame(camname, frame):
     
     # Convert quaternion to heading-pitch-roll
     heading, pitch, roll = quaternion_to_euler(rotation.x, rotation.y, rotation.z, rotation.w)
+    print(heading, pitch, roll)
     
     return position, heading, pitch, roll
 
@@ -54,7 +60,9 @@ def export_cams_csv(camname, imgname, flength, timerange=(0,100), csv_path=None)
             position, heading, pitch, roll = get_camera_transform_at_frame(camname, frame)
             name = f"{basename}{frame:04d}{ext}"
             px = py = k1 = k2 = k3 = k4 = t1 = t2 = 0
-            writer.writerow([name, position.x, position.y, position.z, heading, pitch, roll, flength, 
+            writer.writerow([name, position.x, position.y, position.z, 
+                             heading, pitch, roll,  # BUG
+                             flength, 
                              px, py, k1, k2, k3, k4, t1, t2])
 
 # for camera_angle_x and camera_angle_y in transforms_train.json

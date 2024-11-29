@@ -21,34 +21,32 @@ def export_fbx(fbx_path, exclude=[]):
 
     if not visible_geometry:
         print("No visible geometry to export.")
-        return
-    
-    # Create a new empty object
-    base_obj = rt.box()
-    rt.convertTo(base_obj, rt.Editable_Mesh)
-    
-    for obj in visible_geometry:
-        rt.attach(base_obj, obj, rt.name("copy"))
 
-    # Convert the combined object to an editable mesh
-    rt.convertToMesh(base_obj)
-    
-    # Reset the transformation matrix
-    rt.resetTransform(base_obj)
-    rt.resetXForm(base_obj)
-    rt.collapseStack(base_obj)
-    
-    # Center the pivot point
-    rt.centerPivot(base_obj)
-    
-    # Select only the combined object
-    rt.select(base_obj)
-    
-    # Export the selected object to FBX
-    rt.exportFile(fbx_path, rt.name("noPrompt"), selectedOnly=True, using=rt.FBXEXP)
-    
-    # Delete the temporary object
-    rt.delete(base_obj)
+    else:
+        base_obj = rt.copy(visible_geometry[0])
+        rt.convertToMesh(base_obj)
+
+        # Attach copies of the remaining visible objects to the base object
+        for obj in visible_geometry[1:]:
+            rt.attach(base_obj, rt.copy(obj))
+
+        # Reset the transformation matrix and center the pivot point
+        rt.resetTransform(base_obj)
+        rt.resetXForm(base_obj)
+        rt.collapseStack(base_obj)
+        rt.centerPivot(base_obj)
+
+        # Convert the combined object to an editable mesh
+        rt.convertToMesh(base_obj)
+        
+        # Select only the combined object
+        rt.select(base_obj)
+        
+        # Export the selected object to FBX
+        rt.exportFile(fbx_path, rt.name("noPrompt"), selectedOnly=True, using=rt.FBXEXP)
+        
+        # Delete the temporary object
+        rt.delete(base_obj)
 
 
 def convert_fbx_to_ply(fbx_path, ply_path, points_num=100000):   
