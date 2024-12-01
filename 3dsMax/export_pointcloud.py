@@ -4,11 +4,11 @@ import shutil
 import open3d as o3d
 import open3d.core as o3c  # type: ignore
 
+
 import pymxs  # type: ignore
+rt = pymxs.runtime
 
 def export_fbx(fbx_path, exclude=[]):
-    rt = pymxs.runtime
-
     # Get all objects in the scene
     all_objects = rt.objects
 
@@ -30,17 +30,21 @@ def export_fbx(fbx_path, exclude=[]):
         for obj in visible_geometry[1:]:
             rt.attach(base_obj, rt.copy(obj))
 
-        # Reset the transformation matrix and center the pivot point
-        rt.resetTransform(base_obj)
-        rt.resetXForm(base_obj)
-        rt.collapseStack(base_obj)
-        rt.centerPivot(base_obj)
-
         # Convert the combined object to an editable mesh
         rt.convertToMesh(base_obj)
         
         # Select only the combined object
         rt.select(base_obj)
+
+        # Rotate the object 90 degrees around its Y axis
+        rotation_matrix = rt.angleaxis(-90, rt.point3(1, 0, 0))
+        rt.rotate(base_obj, rotation_matrix)
+
+        # Reset the transformation matrix and center the pivot point
+        rt.resetTransform(base_obj)
+        rt.resetXForm(base_obj)
+        rt.collapseStack(base_obj)
+        base_obj.pivot = rt.Point3(0, 0, 0)
         
         # Export the selected object to FBX
         rt.exportFile(fbx_path, rt.name("noPrompt"), selectedOnly=True, using=rt.FBXEXP)
@@ -49,9 +53,10 @@ def export_fbx(fbx_path, exclude=[]):
         rt.delete(base_obj)
 
 
-def convert_fbx_to_ply(fbx_path, ply_path, points_num=100000):   
+def convert_fbx_to_ply(fbx_path, ply_path, points_num=100000):
     # Import the FBX file in Open3D
     mesh = o3d.io.read_triangle_mesh(fbx_path)
+    
     pcd = mesh.sample_points_uniformly(points_num)
 
     # Debugging: Print the number of points
@@ -77,7 +82,7 @@ if __name__ == "__main__":
     ply_path = os.path.join(output_dir, "points.ply")
     fbx_path = os.path.join(tmp_dir, "export.fbx")
 
-    points_num = 20000
+    points_num = 100000
     
     # export scene to FBX and use Open3D to convert it to PLY
     os.makedirs(tmp_dir, exist_ok=True)
