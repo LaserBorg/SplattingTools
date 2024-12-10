@@ -20,8 +20,12 @@ Viewer using PlayCanvas Orbit camera:
 https://konzept.staging.visionsbox.de/dt/splat/orbit/
 
 Viewer using modified SuperSplat export:  
-https://konzept.staging.visionsbox.de/dt/splat/
+https://konzept.staging.visionsbox.de/dt/splat/index.php?model=iceberg
 
+
+Playcanvas examples
+https://playcanvas.vercel.app/#/camera/multi
+https://github.com/playcanvas/engine/blob/main/examples/src/examples/camera/multi.example.mjs
 
 
 ## links to manuals

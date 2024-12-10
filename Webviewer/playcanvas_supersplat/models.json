@@ -1,0 +1,36 @@
+[
+    {
+      "title": "Iceberg Demo",
+      "urlparameter": "iceberg",
+      "src": "https://konzept.staging.visionsbox.de/dt/splat/models/iceberg.compressed.ply",
+      "position": "0 100 0",
+      "rotation": "0 0 180"
+    },
+    {
+      "title": "Harro Höfliger",
+      "urlparameter": "harro",
+      "src": "https://konzept.staging.visionsbox.de/dt/splat/models/harro.compressed.ply",
+      "position": "-0.01 0.65 0.1",
+      "rotation": "-0.03 45 -178.3",
+      "bgcolor": "#f4f4f4"
+    },
+    {
+      "title": "Bamberg Kirche",
+      "urlparameter": "kirche",
+      "src": "https://konzept.staging.visionsbox.de/dt/splat/models/bamberg-kirche_300k.compressed.ply",
+      "bgcolor": "#d2d2d2"
+    },
+    {
+      "title": "Surreal",
+      "urlparameter": "surreal",
+      "src": "https://konzept.staging.visionsbox.de/dt/splat/models/bamberg-kirche_300k.compressed.ply"
+    },
+    {
+      "title": "AIDA Cosma",
+      "urlparameter": "cosma",
+      "src": "https://konzept.staging.visionsbox.de/dt/splat/models/cosma.compressed.ply",
+      "position": "0 0 0",
+      "rotation": "0 0 180",
+      "bgcolor": "#545454"
+    }
+  ]
